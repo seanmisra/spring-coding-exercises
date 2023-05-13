@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("v1/api/hello")
 public class DemoController {
-
-    @Autowired
     private DemoService demoService;
+
+    // @Autowired -> can omit autowired
+    DemoController (DemoService demoService) {
+        this.demoService = demoService;
+    }
 
     @GetMapping
     String helloWorld() {

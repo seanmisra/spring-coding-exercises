@@ -5,4 +5,5 @@ Commits correspond to each exercise
 1. Spring Boot setup
 2. GET endpoint example (return "hello world")
 3. POST endpoint example (return an object)
-4. Use @Autowired for dependency injection (inject service in controller)
+4. Use @Autowired for dependency injection (inject service in controller) - field injection
+5. Use dependency injection - constructor injection
