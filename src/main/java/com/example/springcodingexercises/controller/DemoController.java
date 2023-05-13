@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 public class DemoController {
     private DemoService demoService;
 
-    // @Autowired -> can omit autowired
-    DemoController (DemoService demoService) {
+    @Autowired
+    void setDemoService(DemoService demoService) {
         this.demoService = demoService;
     }
 

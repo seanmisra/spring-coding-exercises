@@ -7,3 +7,4 @@ Commits correspond to each exercise
 3. POST endpoint example (return an object)
 4. Use @Autowired for dependency injection (inject service in controller) - field injection
 5. Use dependency injection - constructor injection
+6. Use dependency injection with @Autowired - setter injection
