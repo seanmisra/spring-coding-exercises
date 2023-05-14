@@ -18,4 +18,25 @@ public class PersonController {
     Person getPersonByName(@RequestParam String name) {
         return this.demoService.getPersonByName(name);
     }
+
+    @GetMapping("/all")
+    Iterable<Person> getAllPersons() {
+        return this.demoService.getAllPersons();
+    }
+
+    @PostMapping
+    void createPersonByName(@RequestBody Person person) {
+        String name = person.getName();
+        this.demoService.createPersonByName(name);
+    }
+
+    @PutMapping
+    void updatePerson(@RequestBody Person person) {
+        this.demoService.updatePerson(person);
+    }
+
+    @DeleteMapping
+    void deletePersonById(@RequestBody Person person) {
+        this.demoService.deletePersonById(person.getId());
+    }
 }

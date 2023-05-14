@@ -9,14 +9,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class StudentConfig {
 
-    @Bean
-    CommandLineRunner commandLineRunner(PersonRepository personRepository) {
-        return args -> {
-            Person person = new Person("Sean");
-            personRepository.save(person);
-
-            Person personTwo = new Person("John");
-            personRepository.save(personTwo);
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(PersonRepository personRepository) {
+//        return args -> {
+//            Person person = new Person("Sean");
+//            personRepository.save(person);
+//
+//            Person personTwo = new Person("John");
+//            personRepository.save(personTwo);
+//        };
+//    }
 }

@@ -5,6 +5,7 @@ import com.example.springcodingexercises.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DemoService {
@@ -20,6 +21,23 @@ public class DemoService {
         return persons.get(0); // for now return first result
     }
 
+    public void createPersonByName(String name) {
+        Person person = new Person(name);
+        this.repository.save(person);
+    }
+
+    public void updatePerson(Person person) {
+        Optional<Person> existingPerson = this.repository.findById(person.getId());
+
+        if (existingPerson.isPresent()) {
+            this.repository.save(person);
+        }
+    }
+
+    public void deletePersonById(long id) {
+        this.repository.deleteById(id);
+    }
+
     public String helloWorld() {
         return "hello world";
     }
@@ -32,5 +50,9 @@ public class DemoService {
         newPerson.setId(id);
         newPerson.setName(name + "_DEMO");
         return newPerson;
+    }
+
+    public Iterable<Person> getAllPersons() {
+        return this.repository.findAll();
     }
 }
